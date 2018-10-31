@@ -5,8 +5,9 @@ import (
 	"net/http"
 	"text/template"
 
-	"github.com/azer/yolo/src"
+	"github.com/digibake/yolo/src"
 )
+
 
 func main() {
 	var (
@@ -92,7 +93,7 @@ var socket;
 open()
 
 function open () {
-  var conn = new WebSocket("ws://" + (addr[0] == ":" ? "localhost" + addr : addr) + "/socket");
+  var conn = new WebSocket("ws://" + location.host + "/socket");
   conn.onopen = onOpen.bind(null, conn)
   conn.onclose = onClose
   conn.onmessage = onMessage
